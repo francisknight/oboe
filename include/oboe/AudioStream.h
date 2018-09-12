@@ -406,30 +406,12 @@ protected:
      */
     DataCallbackResult fireCallback(void *audioData, int numFrames);
 
-    /**
-     * Used to set the format of the underlying stream
-     */
-    virtual void setNativeFormat(AudioFormat format) {
-        mNativeFormat = format;
-    }
-
-    AudioFormat mNativeFormat = AudioFormat::Invalid;
-
-    /**
-     * Number of frames which have been written into the stream
-     *
-     * TODO these should be atomic like in AAudio
-     */
+    // TODO these should be atomic like in AAudio
     int64_t              mFramesWritten = 0;
-
-    /**
-     * Number of frames which have been read from the stream
-     *
-     * TODO these should be atomic like in AAudio
-     */
     int64_t              mFramesRead = 0;
 
 private:
+    // TODO these should be atomic like in AAudio
     int                  mPreviousScheduler = -1;
 };
 

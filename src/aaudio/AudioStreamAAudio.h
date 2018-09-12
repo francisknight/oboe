@@ -106,9 +106,6 @@ public:
         return mAAudioStream.load();
     }
 
-protected:
-    Result convertApplicationDataToNative(int32_t numFrames); // TODO remove?
-
 private:
 
     float               *mFloatCallbackBuffer;
